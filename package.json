@@ -1,29 +1,31 @@
 {
-  "name": "GuthubBrowserWixNavigation",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
-  },
-  "dependencies": {
-    "eslint": "^4.0.0",
-    "eslint-config-airbnb": "^15.0.1",
-    "eslint-plugin-import": "^2.3.0",
-    "eslint-plugin-react": "^7.1.0",
-    "eslint-plugin-react-native": "^2.3.2",
-    "eslint-watch": "^3.1.0",
-    "react": "16.0.0-alpha.12",
-    "react-native": "0.45.1",
-    "react-native-navigation": "^1.1.98"
-  },
-  "devDependencies": {
-    "babel-jest": "20.0.3",
-    "babel-preset-react-native": "1.9.2",
-    "jest": "20.0.4",
-    "react-test-renderer": "16.0.0-alpha.12"
-  },
-  "jest": {
-    "preset": "react-native"
-  }
+	"name": "GuthubBrowserWixNavigation",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"test": "jest"
+	},
+	"dependencies": {
+		"buffer": "^5.0.6",
+		"lodash": "^4.17.4",
+		"eslint": "^4.0.0",
+		"eslint-config-airbnb": "^15.0.1",
+		"eslint-plugin-import": "^2.3.0",
+		"eslint-plugin-react": "^7.1.0",
+		"eslint-plugin-react-native": "^2.3.2",
+		"eslint-watch": "^3.1.0",
+		"react": "16.0.0-alpha.12",
+		"react-native": "0.45.1",
+		"react-native-navigation": "^1.1.98"
+	},
+	"devDependencies": {
+		"babel-jest": "20.0.3",
+		"babel-preset-react-native": "1.9.2",
+		"jest": "20.0.4",
+		"react-test-renderer": "16.0.0-alpha.12"
+	},
+	"jest": {
+		"preset": "react-native"
+	}
 }
