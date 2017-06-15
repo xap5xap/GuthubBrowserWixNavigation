@@ -5,6 +5,7 @@ import SearchPage from './SearchPage';
 import LoginPage from './LoginPage';
 
 import Details from './Feeds/Details';
+import SearchResults from './Search/SearchResults';
 
 
 export default function () {
@@ -13,5 +14,7 @@ export default function () {
     Navigation.registerComponent('githubBrowser.LoginPage', () => LoginPage);
 
     Navigation.registerComponent('githubBrowser.FeedsPage.Details', () => Details);
+
+    Navigation.registerComponent('githubBrowser.SearchPage.Results', () => SearchResults);
     
 }
