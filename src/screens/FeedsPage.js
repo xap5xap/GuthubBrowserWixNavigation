@@ -28,14 +28,14 @@ class FeedsPage extends React.Component {
             var url = 'https://api.github.com/users/'
                 + authInfo.user.login
                 + '/received_events';
-
             fetch(url, {
-                headers: authInfo.headers
+                headers: authInfo.header
             })
                 .then(response => response.json())
                 .then(responseData => {
                     var feedItems = responseData.filter(ev => {
-                        return ev.type !== 'PushEvent'
+                        // return ev.type == 'PushEvent'
+                        return ev.type
                     });
                     this.setState({
                         dataSource: this.state.dataSource.cloneWithRows(feedItems),
@@ -46,7 +46,13 @@ class FeedsPage extends React.Component {
     }
 
     pressRow(rowData) {
-        console.log(rowData);
+        this.props.navigator.push({
+            screen: 'githubBrowser.FeedsPage.Details',
+            title: 'Feed details',
+            passProps: {
+                pushEvent: rowData,
+            }
+        });
     }
 
     renderRow(rowdata) {
