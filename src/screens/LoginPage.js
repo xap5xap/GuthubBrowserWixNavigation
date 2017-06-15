@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, ScrollView, TouchableHighlight, Image, TextInput, ActivityIndicator } from 'react-native';
-import { AuthService } from '../services/AuthService';
+import AuthService from '../services/AuthService';
 
 class LoginPage extends React.Component {
 
@@ -49,12 +49,11 @@ class LoginPage extends React.Component {
 
     onLoginPressed() {
         this.setState({ showProgess: true });
-        var authService = require('../services/AuthService');
-        authService.login({
+        AuthService.login({
             username: this.state.username,
             password: this.state.password
         }, (results) => {
-            console.log('results',results);
+            console.log('results', results);
             this.setState(Object.assign({
                 showProgess: false
             }, results));

@@ -6,37 +6,10 @@ const authKey = 'auth';
 const userKey = 'user';
 
 class AuthService {
-    getAuthInfo2(cb) {
-        AsyncStorage.multiGet([authKey, userKey], (err, val) => {
-            if (err) {
-                return cb(err);
-            }
-            if (!val) {
-                return cb();
-            }
-
-            let zippedObject = {};
-            zippedObject[authKey] = val[0][1];
-            zippedObject[userKey] = val[1][1];
-            if (!zippedObject[authKey]) {
-                return cb();
-            }
-            let authInfo = {
-                header: {
-                    Authorization: 'Basic ' + zippedObject[authKey]
-                },
-                user: JSON.parse(zippedObject[userKey])
-            };
-            return cb(null, authInfo);
-        });
-    }
-
-    getAuthInfo() {
-        console.log('getAuthInfo()');
+ 
+     getAuthInfo() {
         return new Promise((resolve, reject) => {
             AsyncStorage.multiGet([authKey, userKey], (err, val) => {
-                console.log('err', err);
-                console.log('val', val);
                 if (err) {
                     return reject(err);
                 }
@@ -48,10 +21,8 @@ class AuthService {
                 zippedObject[authKey] = val[0][1];
                 zippedObject[userKey] = val[1][1];
                 if (!zippedObject[authKey]) {
-                    console.log('aca');
                     return resolve();
                 }
-                console.log('aca 2');
                 let authInfo = {
                     header: {
                         Authorization: 'Basic ' + zippedObject[authKey]
@@ -64,7 +35,7 @@ class AuthService {
     }
 
 
-    login(creds, cb) {
+     login(creds, cb) {
         var b = new Buffer(`${creds.username}:${creds.password}`);
         var encodedAuth = b.toString('base64');
         fetch('https://api.github.com/user', {

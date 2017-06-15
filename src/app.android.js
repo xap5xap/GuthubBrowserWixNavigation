@@ -2,7 +2,8 @@ import { Platform } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 import registerScreens from './screens';
 
-var authService = require('./services/AuthService');
+// var authService = require('./services/AuthService');
+import AuthService from './services/AuthService'
 
 // screen related book keeping
 registerScreens();
@@ -18,7 +19,7 @@ const tabs = [{
     icon: require('./assets/img/search.png'),
     title: 'Search page',
 }];
-authService.getAuthInfo().then((authInfo) => {
+AuthService.getAuthInfo().then((authInfo) => {
     if (authInfo) {
         // this will start our app
         Navigation.startTabBasedApp({
